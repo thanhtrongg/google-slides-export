@@ -1,23 +1,42 @@
 # Google Slides Export
 
-Export Google Slides presentations to PNG images with speaker notes.
+Export Google Slides to PNG images when downloading is disabled (view-only mode).
+
+## How it works
+
+Google Slides' HTML view (`/htmlpresent`) renders each slide as a DOM element, making it possible to capture them as images via canvas — even when the original document has download/export restrictions.
 
 ## Usage
 
-1. Open your Google Slides presentation in browser
-2. Open DevTools (F12 → Console)
-3. Paste the script and press Enter
-4. Images will download automatically to your browser's download folder
+1. Open the restricted presentation
+2. Change the URL from:
+   ```
+   https://docs.google.com/presentation/d/.../edit
+   ```
+   to:
+   ```
+   https://docs.google.com/presentation/d/.../htmlpresent
+   ```
+3. Press Enter to load the HTML view
+4. Open DevTools (F12 → Console)
+5. Paste the script and press Enter
+6. Each slide downloads automatically as PNG with notes rendered at the bottom
+
+## Example
+
+```
+Before: https://docs.google.com/presentation/d/REPLACE_WITH_YOUR_DOC_ID/edit
+After:  https://docs.google.com/presentation/d/REPLACE_WITH_YOUR_DOC_ID/htmlpresent
+```
 
 ## Output
 
-Each slide is saved as `Slide_01.png`, `Slide_02.png`, etc. at 960×620 resolution. Speaker notes are rendered at the bottom of each image with a green divider.
+Slides are saved as `Slide_01.png`, `Slide_02.png`, etc. at 960×620 resolution. Speaker notes (if any) appear below a green divider.
 
 ## Notes
 
-- Works with Google Slides HTML view (slides displayed as `div[role="group"]`)
-- A 1-second delay between slides prevents browser throttling
-- Background images and notes are captured from the rendered DOM
+- A 1-second delay between downloads prevents browser throttling
+- Works in any Chromium-based browser (Chrome, Edge, Brave)
 
 ## License
 
