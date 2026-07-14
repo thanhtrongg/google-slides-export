@@ -38,6 +38,21 @@ Slides are saved as `Slide_01.png`, `Slide_02.png`, etc. at 960×620 resolution.
 - A 1-second delay between downloads prevents browser throttling
 - Works in any Chromium-based browser (Chrome, Edge, Brave)
 
+## Before running
+
+To let the script save files automatically without a save dialog for each slide:
+
+| Browser | Settings page |
+|---------|---------------|
+| Chrome | [`chrome://settings/downloads`](chrome://settings/downloads) |
+| Brave | [`brave://settings/downloads`](brave://settings/downloads) |
+| Edge | [`edge://settings/downloads`](edge://settings/downloads) |
+
+Then:
+
+1. Set a fixed **Location** for downloads
+2. Turn **off** "Ask where to save each file before downloading"
+
 ## License
 
 [MIT](LICENSE)
